@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #container {
+            display: flex;
+            flex-direction: column;
+            /* stack items vertically */
+            justify-content: center;
+            /* center vertically */
+            align-items: center;
+            /* center horizontally */
+            height: 100vh;
+            /* take full height of the screen */
+            text-align: center;
+        }
+
+        button {
+            margin: 10px;
+            padding: 10px 20px;
+        }
+    </style>
+        <link rel="stylesheet" href="/style.css">
+
+</head>
+
+<body>
+ <%- include ('header.ejs') %>
+
+    <div id="container">
+        <h4>These is a <%= title %> </h4>
+        <h1>Enter you details</h1>
+
+        <form action="login" method="POST">
+            <label for="name">Name : </label>
+            <input type="text" id="name" name="name" required><br><br>
+
+            <label for="age">Age : </label>
+            <input type="number" name="age" id="age" required><br><br>
+
+            <label for="place">Place : </label>
+            <input type="text" name="place" id="place" required><br><br>
+
+            <button value="submit"> submit </button>
+    
+
+    </form>
+
+    </div>
+
+<%- include ('footer.ejs') %>
+</body>
+
+</html>

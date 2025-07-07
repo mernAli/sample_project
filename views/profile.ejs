@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        #container {
+            display: flex;
+            flex-direction: column;
+            /* stack items vertically */
+            justify-content: center;
+            /* center vertically */
+            /* center horizontally */
+            height: 100vh;
+            /* take full height of the screen */
+            text-align: center;
+        }
+        #innerContainer{
+            text-align: center;
+        }
+    </style>
+    <link rel="stylesheet" href="/style.css">
+    <title>profile page</title>
+</head>
+
+<body>
+    <%- include ('header.ejs') %>
+
+        <div id="container">
+            <h1> Your details on <%= title %></h1>
+            <div id="innerContainer">
+            <p>Name : <%= userdata.name %> </p>
+            <p>Age : <%= userdata.age %> </p>
+            <p>Country : <%= userdata.country %> </p>
+            </div>
+        </div>
+
+    <%- include ('footer.ejs') %>
+
+</body>
+
+</html>
