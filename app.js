@@ -5,6 +5,8 @@ const { log } = require('console');
 
 const app = express()
 
+app.use(express.json());
+
 app.use(express.urlencoded({extended:true}))//required when submiting forms
 
 app.set('view engine', 'ejs')
@@ -32,13 +34,21 @@ app.get('/login',(req,res)=>{
 
 app.post('/login',(req,res)=>{
     console.log(req.body);
-    const result = req.body;
+    const userName = req.body.name
+    const userAge = req.body.age
+    const userPlace = req.body.place
+    
+    console.log(userName);
+    
 
-    if(!result.name||!result.age||!result.place){
-        res.send('Plz fill the whole form')
-    }else(
-        res.send(`Name : ${result.name}     Age : ${result.age}     place : ${result.place}`)
-    )
+    res.render('profile',{userName, userAge, userPlace, title : 'Home Page'})
+
+    // if(!userName||!userAge||!userPlace){
+    //     res.send('Plz fill the whole form')
+    // }
+    // }else(
+    //     res.send(`Name : ${userName}     Age : ${userAge}     place : ${userPlace}`)
+    // )
 
    
 })
